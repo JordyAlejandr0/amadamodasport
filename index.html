@@ -1,86 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Amada Moda Sport, tu tienda de moda accesible para ropa y bisutería">
-    <meta name="keywords" content="moda, bisutería, ropa casual, Amada Moda Sport">
-    <title>Bisuteria y ropa!</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Información del Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        .info-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <p class="logo"><a href="#">Bisuteria y Ropa!</a></p>
-            <nav>
-                <a href="#somos-proya">¿Quienes Somos?</a>
-                <a href="#nuestros-programas">Nuestros Productos</a>
-                <a href="#Conocenos">Ventajas</a>
-                <a href="#final">Redes</a>
-            </nav>
-        </div>
-    </header>
+    <div class="info-container">
+        <h1>Información del Cliente</h1>
+        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p><strong>Dirección:</strong> <span id="direccion"></span></p>
+        <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+    </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <h1>Compra las mejores prendas y accesorios <br>con los Mejores</h1>
-        </section>
+    <script>
+        // Función para obtener parámetros de la URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
-        <!-- Sección ¿Quiénes Somos? -->
-        <section id="somos-proya">
-            <div class="container">
-                <div class="img-container" role="img" aria-label="Logo de Amada Moda Sport"></div>
-                <div class="texto">
-                    <h2>Somos <span class="color-acento">Amada Moda Sport</span></h2>
-                    <p>Bienvenidos a Amada Moda Sport, un espacio donde la moda y el estilo accesible se encuentran con un toque de cercanía y autenticidad...</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- NUEVA Sección Nuestros Productos -->
-        <section id="nuestros-programas">
-            <div class="container">
-                <h2>Nuestros Productos</h2>
-                <div class="programas">
-                    <div class="carta">
-                        <a href="https://w.app/JmTkOS"><h3>Bisutería</h3></a>
-                    </div>
-                    <div class="carta">
-                        <a href="https://w.app/JmTkOS"><h3>Ropa para hombre</h3></a>
-                    </div>
-                    <div class="carta">
-                        <a href="https://w.app/JmTkOS"><h3>Ropa para mujer</h3></a>
-                    </div>  
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Conocenos -->
-        <section id="Conocenos">
-            <div class="container">
-                <ul>
-                    <li>⚫ Envíos rápidos a todo cali</li>
-                    <li>⚫ Flexibilidad de horarios</li>
-                    <li>⚫ Soporte personalizado para cada cliente</li>
-                    <li>⚫ Soporte personalizado para cada cliente</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Sección Final -->
-        <section id="final">
-            <h2>Conocenos!!!</h2>
-            <a href="https://www.instagram.com/amadamodasport?igsh=NGxtbWx3amZhYjky" target="_blank">
-                <button>CLICK AQUI!!</button>
-            </a>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; Amada Moda Sport 2024</p>
-        </div>
-    </footer>
+        // Asignar los valores de los parámetros a los elementos de la página
+        document.getElementById('nombre').textContent = getQueryParam('nombre') || 'No disponible';
+        document.getElementById('direccion').textContent = getQueryParam('direccion') || 'No disponible';
+        document.getElementById('telefono').textContent = getQueryParam('telefono') || 'No disponible';
+    </script>
 </body>
 </html>
